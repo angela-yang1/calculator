@@ -38,19 +38,19 @@ input[type=button] {
     padding: 0;
     margin: 5px;
     box-sizing: border-box;
-    background: #ecedef;
+    background: #5E5858;
     border: none;
     font-size: 30px;
     line-height: 30px;
     border-radius: 50%;
     font-weight: 700;
-    color: #5E5858;
+    color: #ecedef;
     cursor: pointer;
     
 }
 
 .zero{
-    width: 125px !important;
+    width: 130px !important;
     border-radius: 50px !important;
 }
 
@@ -68,10 +68,14 @@ input[type=text] {
     font-size: 60px;
     line-height: 60px;
     margin: 0 25px;
-    
 }
+
 .red {
     background: #FF0509 !important;
     color: #ffffff !important;
-    
+}
+
+.grey {
+    background: #ecedef !important;
+    color: #5E5858 !important;
 }
