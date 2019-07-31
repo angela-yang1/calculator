@@ -56,12 +56,23 @@ function clear() {
 function storeNumber(button) {
     console.log("store number");
     // if empty - ignore
-    // if string empty - push to array
+    if (numString === "") return;
+    // if string empty - 
+    else if (isNaN(numString[numString.length -1])) {
+        numString = numString.slice(0, -1) + button;
+    }
     // else push to array, reset string
+    else {
+        numString += button;
+    }
+    display.value = numString;
 }
 
 function calculate() {
     console.log("calculate");
+    numString = numString.replace(/x/g, "*");
+    numString = eval(numString).toString();
+    display.value = numString;
     // caluclate the result
     // display result
     // save result as previous value
