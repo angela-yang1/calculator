@@ -6,7 +6,13 @@ let isPreviousResult = false;
 listen()
 
 function listen() {
-  document.addEventListener("click", getButtonValue);
+    const calc = document.getElementById("buttons");
+
+    calc.addEventListener('click', (event) => {
+        const isButton = event.target.nodeName === "INPUT";
+        if (!isButton) return;
+        getButtonValue();
+    })
 }
 
 function getButtonValue() {
@@ -20,6 +26,7 @@ function getButtonValue() {
     else if (button === "C") clear();
     // if =, calculate total
     else if (button === "=") calculate();
+    else if (button === "%") convertPercentage();
     // else (store number)
     else storeNumber(button);
 }
@@ -77,4 +84,12 @@ function calculate() {
     // display result
     // save result as previous value
     // prevent unexpected behaviour
+}
+
+function convertPercentage() {
+    if (numString === "0" || numString === "") return;
+    else {
+        numString = (parseFloat(numString) / 100).toString();
+        display.value = numString;
+    }
 }
